@@ -30,8 +30,6 @@ class FormFragment : Fragment(), TimePickerListener {
         savedInstanceState: Bundle?
     ): View? {
 
-        //mainViewModel.listTarefa()
-
         // Inflate the layout for this fragment
         binding = FragmentFormBinding.inflate(layoutInflater, container, false)
 
@@ -125,7 +123,7 @@ class FormFragment : Fragment(), TimePickerListener {
                 context, "Tarefa Salva",
                 Toast.LENGTH_SHORT
             ).show()
-            findNavController().navigate(R.id.action_formFragment_to_listFragment)
+            findNavController().navigate(R.id.action_formFragment_to_listFragment2)
 
         } else {
             Toast.makeText(

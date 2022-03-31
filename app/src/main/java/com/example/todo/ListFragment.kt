@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.todo.adapter.TarefaAdapter
 import com.example.todo.databinding.FragmentListBinding
 
+
 class ListFragment : Fragment() {
 
 

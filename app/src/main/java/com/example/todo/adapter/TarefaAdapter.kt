@@ -15,12 +15,12 @@ class TarefaAdapter : RecyclerView.Adapter<TarefaAdapter.TarefaViewHolder>(){
 
     class TarefaViewHolder (view: View) : RecyclerView.ViewHolder(view){
 
-        val textTarefa = view.findViewById<TextView>(R.id.textTarefa)
-        val textDescricao = view.findViewById<TextView>(R.id.textDescricao)
-        val textResponsavel = view.findViewById<TextView>(R.id.recyclerTarefa)
-        val textData = view.findViewById<TextView>(R.id.textData)
-        val switchCard = view.findViewById<Switch>(R.id.switchAtivoCard)
-        val textCategoria = view.findViewById<TextView>(R.id.textCategoria)
+        val textTarefa = view.findViewById<TextView>(R.id.textTarefaCard)
+        val textDescricao = view.findViewById<TextView>(R.id.textDescricaoCard)
+        val textResponsavel = view.findViewById<TextView>(R.id.TextRespoCard)
+        val textData = view.findViewById<TextView>(R.id.textDataCard)
+        val switchCard = view.findViewById<Switch>(R.id.switAndamentoCard)
+        val textCategoria = view.findViewById<TextView>(R.id.textCategoriaCard)
 
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TarefaViewHolder  {
