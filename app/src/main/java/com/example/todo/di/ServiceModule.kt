@@ -11,6 +11,8 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object ServiceModule {
 
+
+
     @Provides
     @Singleton
     fun provideRepository(): Repository{

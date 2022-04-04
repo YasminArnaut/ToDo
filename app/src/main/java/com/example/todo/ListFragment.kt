@@ -9,10 +9,12 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.todo.adapter.TarefaAdapter
+import com.example.todo.adapter.TaskItemClickListener
 import com.example.todo.databinding.FragmentListBinding
+import com.example.todo.model.Tarefa
 
 
-class ListFragment : Fragment() {
+class ListFragment : Fragment(), TaskItemClickListener {
 
 
     private lateinit var binding: FragmentListBinding
@@ -27,7 +29,8 @@ class ListFragment : Fragment() {
 
         binding = FragmentListBinding.inflate(layoutInflater, container, false)
 
-        val adapter = TarefaAdapter()
+        val adapter = TarefaAdapter(this,mainViewModel)
+
 
         //Definir o Layout Manager da RecyclerView
         binding.recyclerTarefa.layoutManager = LinearLayoutManager(context)
@@ -42,6 +45,7 @@ class ListFragment : Fragment() {
 
         //Navegação para o Fragment de Form
         binding.floatingAdd.setOnClickListener {
+            mainViewModel.tarefaSelecionada = null
             findNavController().navigate(R.id.action_listFragment_to_formFragment)
         }
 
@@ -53,6 +57,11 @@ class ListFragment : Fragment() {
         }
     }
       return binding.root
+    }
+
+    override fun onTaskClicked(tarefa: Tarefa) {
+        mainViewModel.tarefaSelecionada = tarefa
+        findNavController().navigate(R.id.action_listFragment_to_formFragment)
     }
 }
 
